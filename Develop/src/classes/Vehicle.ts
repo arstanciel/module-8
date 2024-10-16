@@ -1,6 +1,7 @@
 // import Driveable interface
 import Driveable from '../interfaces/Driveable.js';
 
+
 // Vehicle class that implements Driveable interface
 class Vehicle implements Driveable {
   // Declare properties of the Vehicle class
@@ -21,13 +22,13 @@ class Vehicle implements Driveable {
 
   // Method to start the vehicle
   start(): void {
-    this.started = true;
-    console.log('Vehicle started');
+     this.started = true 
+      console.log('Vehicle started');
+    
   }
-
+  
   // Method to accelerate the vehicle
   accelerate(change: number): void {
-    // Check if the vehicle is started
     if (this.started) {
       this.currentSpeed += change;
       console.log(`Vehicle accelerated to ${this.currentSpeed} mph`);
@@ -72,8 +73,8 @@ class Vehicle implements Driveable {
     } else {
       console.log('Start the vehicle first');
     }
+  
   }
 }
-
 // Export the Vehicle class
 export default Vehicle;

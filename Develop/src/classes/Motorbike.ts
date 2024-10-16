@@ -57,6 +57,7 @@ class Motorbike extends Vehicle {
     super.printDetails();
     console.log(`VIN: ${this.vin}`);
     console.log(`Make: ${this.make}`);
+    console.log(`Current Speed: ${this.currentSpeed} mph`);
     console.log(`Model: ${this.model}`);
     console.log(`Year: ${this.year}`);
     console.log(`Weight: ${this.weight} lbs`);

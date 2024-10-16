@@ -20,6 +20,7 @@ class Truck extends Vehicle implements AbleToTow {
   wheels: Wheel[];
   towingCapacity: number;
 
+
   // TODO: Create a constructor that accepts the properties of the Truck class
   constructor(
     vin: string,
@@ -30,7 +31,8 @@ class Truck extends Vehicle implements AbleToTow {
     weight: number,
     topSpeed: number,
     wheels: Wheel[],
-    towingCapacity: number
+    towingCapacity: number,
+
   ) {
     // TODO: The constructor should call the constructor of the parent class, Vehicle
     super();
@@ -51,11 +53,10 @@ class Truck extends Vehicle implements AbleToTow {
       this.wheels = [new Wheel(), new Wheel(), new Wheel(), new Wheel()];
     }
   }
-
   // TODO: Implement the tow method from the AbleToTow interface
   // TODO: Get the make and model of the vehicle if it exists
   tow(vehicle: Truck | Motorbike | Car): void {
-    if ('make' in vehicle && 'model' in vehicle) {
+    if ('make' in vehicle && 'model' in vehicle && 'weight' in vehicle) {
       const vehicleMake = vehicle.make;
       const vehicleModel = vehicle.model;
 
@@ -79,20 +80,29 @@ class Truck extends Vehicle implements AbleToTow {
     console.log(`VIN: ${this.vin}`);
     console.log(`Make: ${this.make}`);
     console.log(`Model: ${this.model}`);
+    console.log(`Current Speed: ${this.currentSpeed}`);
     console.log(`Year: ${this.year}`);
     console.log(`Weight: ${this.weight}`);
+    console.log(`Vehicle current speed: ${this.currentSpeed} mph`);
     console.log(`Top Speed: ${this.topSpeed}`);
     console.log(`Color: ${this.color}`);
     console.log(`Towing Capacity: ${this.towingCapacity}`);
-    console.log('Wheels:');
-    this.wheels.forEach((wheel, index) => {
-      console.log(`Wheel ${index + 1}:`);
-      wheel.printDetails();
-    });
+    console.log(
+      `Wheel 1: ${this.wheels[0].getDiameter} inch with a ${this.wheels[0].getTireBrand} tire`
+    );
+    console.log(
+      `Wheel 2: ${this.wheels[1].getDiameter} inch with a ${this.wheels[1].getTireBrand} tire`
+    );
+    console.log(
+      `Wheel 3: ${this.wheels[2].getDiameter} inch with a ${this.wheels[2].getTireBrand} tire`
+    );
+    console.log(
+      `Wheel 4: ${this.wheels[3].getDiameter} inch with a ${this.wheels[3].getTireBrand} tire`
+    );
+
   }
+
 }
-
-
 
 // Export the Truck class as the default export
   export default Truck;

@@ -14,6 +14,7 @@ class Car extends Vehicle {
   topSpeed: number;
   wheels: Wheel[];
 
+
   // Constructor for the Car class
   constructor(
     vin: string,
@@ -23,7 +24,8 @@ class Car extends Vehicle {
     year: number,
     weight: number,
     topSpeed: number,
-    wheels: Wheel[]
+    wheels: Wheel[],
+
   ) {
     // Call the constructor of the parent class, Vehicle
     super();
@@ -36,6 +38,7 @@ class Car extends Vehicle {
     this.year = year;
     this.weight = weight;
     this.topSpeed = topSpeed;
+    this.currentSpeed = 0;
     // Check if the wheels array has 4 elements
     // If not, create 4 new Wheel objects
     // Otherwise, use the provided wheels array
@@ -53,6 +56,7 @@ class Car extends Vehicle {
 
     // Print details of the Car class
     console.log(`VIN: ${this.vin}`);
+    console.log(`Current Speed: ${this.currentSpeed} mph`);
     console.log(`Color: ${this.color}`);
     console.log(`Make: ${this.make}`);
     console.log(`Model: ${this.model}`);
